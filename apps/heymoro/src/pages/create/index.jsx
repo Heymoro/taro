@@ -276,7 +276,7 @@ export default function CreatePage() {
                   />
                 ))}
                 {state.sourceArtifactId && (
-                  <Notice>按原作品输入和版本换一张，不使用当前草稿。确认报价后点击底部「确认换一张」。</Notice>
+                  <Notice>按原作品的输入换一张，不使用当前草稿。确认报价后点击底部「确认换一张」。</Notice>
                 )}
                 {mode === 'effect' && (
                   <EffectNotes

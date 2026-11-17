@@ -187,3 +187,20 @@ for (const mode of ['free', 'effect']) {
     assert.equal(creates, 1)
   })
 }
+
+test('regeneration guidance describes the original input without obsolete business-version UI', () => {
+  const { readFileSync } = require('node:fs')
+  const path = require('node:path')
+  const source = readFileSync(path.resolve(__dirname, '../../src/pages/create/index.jsx'), 'utf8')
+  assert.match(source, /按原作品的输入换一张，不使用当前草稿。/)
+  assert.doesNotMatch(source, /按原作品输入和版本/)
+})
+
+test('free entry omits the template query instead of passing an invalid empty identity', () => {
+  const { templateRoute } = load('src/templates.js')
+  for (const templateId of ['', null, undefined]) {
+    assert.equal(templateRoute({ templateId }), '/pages/create/index')
+  }
+  assert.equal(templateRoute({ templateId: 2 }), '/pages/create/index?template=2')
+  assert.equal(templateRoute({ templateId: 0 }), '/pages/create/index?template=0')
+})
