@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Heymoro · 小程序用户模块原型</title>
+<style>
+:root{color-scheme:light;--bg:#f4f5f6;--white:#fff;--ink:#181b1d;--muted:#565c63;--line:#e5e7e9;--green:#087c49;--tint:#e7f4ed;--red:#b32422;--safe:env(safe-area-inset-bottom,0px);--focus:#1262ad}
+*{box-sizing:border-box}body{margin:0;background:#e4e7e9;color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,input{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}p,h1,h2{margin:0}.device{max-width:390px;height:min(830px,calc(100dvh - 40px));min-height:460px;margin:20px auto;display:grid;grid-template-rows:30px 44px minmax(0,1fr) auto auto;background:var(--bg);border-radius:25px;border:1px solid #cfd3d6;overflow:hidden;box-shadow:0 14px 44px #242a2f1c}.status,.header{background:var(--white)}.status{display:flex;justify-content:space-between;align-items:center;padding:0 19px;font-size:12px;font-weight:700}.status svg{width:46px;height:14px;fill:currentColor}.header{position:relative;display:flex;justify-content:center;align-items:center;border-bottom:1px solid var(--line)}.header h1{font-size:17px;font-weight:650;max-width:56%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.back{position:absolute;left:5px;top:0;width:49px;height:43px;border:0;background:none;display:grid;place-items:center}.back svg{width:21px;height:21px;stroke:currentColor}.capsule{position:absolute;right:9px;display:flex;justify-content:center;align-items:center;gap:9px;height:29px;width:74px;border-radius:18px;border:1px solid #d8dadc}.capsule svg{height:14px;width:15px;fill:currentColor;stroke:currentColor}.capsule i{height:15px;width:1px;background:var(--line)}.main{min-height:0;overflow:auto;overscroll-behavior:contain}.main:focus{outline:none}.block{background:white;margin-top:8px}.intro{background:var(--white);padding:24px 20px 22px;border-bottom:1px solid var(--line)}.intro h2{font-size:23px;letter-spacing:-.02em;margin-bottom:4px}.intro p,.hint{font-size:13px;color:var(--muted)}.cell{width:100%;min-height:55px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:9px 16px;background:white;border:0;border-bottom:1px solid var(--line)}.cell:last-child{border-bottom:0}.cell span:last-child{display:flex;align-items:center;gap:8px;min-width:0}.cell .sub{font-size:14px;color:var(--muted)}.cell svg{width:16px;height:16px;flex:none;stroke:var(--muted)}.profile{display:flex;gap:13px;align-items:center;padding:20px 16px;background:white;margin:8px 0}.avatar{width:52px;height:52px;flex:none;border-radius:8px;background:var(--tint);color:var(--green);font-weight:700;font-size:20px;display:grid;place-items:center}.profile h2{font-size:19px;overflow-wrap:anywhere}.profile p{font-size:13px;color:var(--muted)}.auth{margin:8px 0;background:white;padding:24px 16px 20px}.auth h2{font-size:20px;margin-bottom:7px}.auth p{margin:0 0 17px}.primary{display:block;width:100%;min-height:45px;padding:9px 12px;background:var(--green);color:white;border:0;border-radius:7px;font-weight:650}.primary:disabled{background:#d5ded8;color:#45534a;cursor:default}.signout{justify-content:center;color:var(--red)}.hint{margin:10px 16px}.hint.error{color:var(--red)}.hint.success{color:var(--green)}.field{padding:10px 16px 10px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--line);font-size:15px;min-height:60px}.field input{border:0;border-radius:4px;background:transparent;flex:1;min-width:0;padding:7px 5px;color:var(--ink);text-align:right}.actions{padding:13px 16px 20px}.tabs{display:flex;align-items:stretch;background:white;border-top:1px solid var(--line);min-height:55px}.tabs[hidden]{display:none}.tab{flex:1;display:grid;justify-items:center;align-content:center;gap:1px;border:0;background:transparent;color:var(--muted);padding:3px 0;font-size:11px;line-height:1.2}.tab[aria-current=page]{color:var(--green);font-weight:700}.tab svg{width:22px;height:22px;stroke:currentColor}.tab[aria-current=page] svg{fill:var(--tint)}.safe{height:max(18px,var(--safe));display:grid;place-items:center;background:white}.safe:before{content:"";height:4px;width:112px;border-radius:8px;background:#191b1c}.footer{max-width:390px;margin:-12px auto 12px;padding:0 10px;text-align:center;color:var(--muted);font-size:12px}.overlay{position:absolute;inset:0;background:#0e161866;display:grid;place-items:center;padding:25px}.overlay[hidden]{display:none}.device{position:relative}.dialog{width:100%;max-width:300px;background:white;border-radius:13px;overflow:hidden;text-align:center}.dialog h2{margin:18px 15px 6px;font-size:18px}.dialog p{font-size:14px;color:var(--muted);margin:0 15px 16px}.dialogActions{display:flex;border-top:1px solid var(--line)}.dialogActions button{min-height:47px;flex:1;border:0;background:white;color:var(--green);font-weight:650}.dialogActions button+button{border-left:1px solid var(--line)}.dialogActions .danger{color:var(--red)}
+@media(max-width:520px){body{background:var(--bg)}.device{max-width:none;height:100dvh;min-height:0;margin:0;border:0;border-radius:0;box-shadow:none}.footer{display:none}}
+</style>
+</head>
+<body>
+<div class="device">
+  <div class="status" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 46 14"><path d="M1 10h2v3H1zm4-3h2v6H5zm4-2h2v8H9zm4-3h2v11h-2z"/><path d="M19 6a9 9 0 0 1 13 0l-1.5 1.6a7 7 0 0 0-10 0zm2.5 3a5 5 0 0 1 8 0L25.5 13z"/><rect x="35" y="4" width="9" height="7" rx="1"/><path d="M45 6h1v3h-1z"/></svg></div>
+  <header class="header"></header>
+  <main class="main" tabindex="-1"></main>
+  <nav class="tabs" aria-label="小程序底部导航"></nav>
+  <div class="safe" aria-hidden="true"></div>
+  <div class="overlay" hidden></div>
+</div>
+<p class="footer">交互原型 · 演示数据 · 不连接真实账号</p>
+<script>
+const main=document.querySelector('.main'),header=document.querySelector('.header'),tabs=document.querySelector('.tabs'),overlay=document.querySelector('.overlay'),device=document.querySelector('.device')
+const H='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3.5 10.5 12 3.5l8.5 7V20H3.5z"/><path d="M10 20v-6h4v6"/></svg>'
+const U='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="7.5" r="3.3"/><path d="M4.5 21v-1.7a7.5 6.3 0 0 1 15 0V21"/></svg>'
+const arrow='<svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke-width="1.7"><path d="m6 3 5 5-5 5"/></svg>'
+const back='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m15 5-7 7 7 7"/></svg>'
+const capsule='<div class="capsule" aria-hidden="true"><svg viewBox="0 0 16 16"><circle cx="3" cy="8" r="1"/><circle cx="8" cy="8" r="1"/><circle cx="13" cy="8" r="1"/></svg><i></i><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="none"/><circle cx="8" cy="8" r="2"/></svg></div>'
+let page='home',signed=false,nickname='小禾',draft='',error='',notice='',dialog=''
+const text=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')
+const cell=(label,action,detail='')=>'<button type="button" class="cell" data-action="'+action+'"><span>'+label+'</span><span><span class="sub">'+text(detail)+'</span>'+arrow+'</span></button>'
+function render(focus=false){
+  const topLevel=page==='home'||page==='mine'
+  const title={home:'Heymoro',mine:'我的',profile:'个人资料',edit:'修改昵称'}[page]
+  header.innerHTML=(topLevel?'':'<button class="back" aria-label="返回" data-action="back">'+back+'</button>')+'<h1>'+title+'</h1>'+capsule
+  tabs.hidden=!topLevel
+  tabs.innerHTML=[['home','首页',H],['mine','我的',U]].map(([key,label,icon])=>'<button class="tab" data-action="'+key+'"'+(page===key?' aria-current="page"':'')+'>'+icon+'<span>'+label+'</span></button>').join('')
+  if(page==='home')main.innerHTML='<section class="intro"><h2>Heymoro</h2><p>从「我的」登录或管理个人资料。</p></section>'
+  if(page==='mine')main.innerHTML=signed?'<section class="profile"><span class="avatar" aria-hidden="true">'+text([...nickname][0])+'</span><div><h2>'+text(nickname)+'</h2><p>已登录 · 演示账号</p></div></section><div class="block">'+cell('个人资料','profile')+'</div><div class="block"><button class="cell signout" data-action="askSignout">退出登录</button></div>':'<section class="auth"><h2>登录 Heymoro</h2><p class="hint">登录后可以查看和修改自己的资料。</p><button class="primary" data-action="login">微信登录</button></section>'
+  if(page==='profile')main.innerHTML='<section class="profile"><span class="avatar" aria-hidden="true">'+text([...nickname][0])+'</span><div><h2>'+text(nickname)+'</h2><p>当前账号</p></div></section><div class="block">'+cell('昵称','edit',nickname)+'</div>'+(notice?'<p class="hint success" role="status">'+text(notice)+'</p>':'')
+  if(page==='edit')main.innerHTML='<form><div class="block"><label class="field">昵称<input name="name" value="'+text(draft)+'" maxlength="80" autocomplete="off" aria-describedby="name-hint"></label></div><p id="name-hint" class="hint'+(error?' error':'')+'" '+(error?'role="alert"':'')+'>'+text(error||'请输入 1–80 个字符的昵称')+'</p><div class="actions"><button class="primary">保存</button></div></form>'
+  overlay.hidden=!dialog
+  overlay.innerHTML=dialog?'<section class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-copy"><h2 id="dialog-title">'+(dialog==='exit'?'退出登录？':'放弃修改？')+'</h2><p id="dialog-copy">'+(dialog==='exit'?'退出后，重新登录仍可查看已保存的资料。':'这次输入的昵称还没有保存。')+'</p><div class="dialogActions"><button data-action="cancelDialog">'+(dialog==='exit'?'取消':'继续编辑')+'</button><button class="danger" data-action="confirmDialog">'+(dialog==='exit'?'退出登录':'放弃修改')+'</button></div></section>':''
+  for(const region of [header,main,tabs])region.inert=Boolean(dialog)
+  if(focus){
+    if(dialog)overlay.querySelector('button').focus()
+    else if(page==='edit')main.querySelector('input').focus({preventScroll:true})
+    else main.focus({preventScroll:true})
+  }
+}
+device.addEventListener('input',e=>{if(e.target.name==='name')draft=e.target.value})
+device.addEventListener('click',e=>{
+  const a=e.target.closest('[data-action]')?.dataset.action
+  if(!a)return
+  error=''
+  if(a==='home'||a==='mine'){page=a;notice=''}
+  if(a==='login'){signed=true;page='mine'}
+  if(a==='profile'&&signed){page='profile';notice=''}
+  if(a==='edit'&&signed){page='edit';draft=nickname}
+  if(a==='back'){if(page==='profile')page='mine';else if(draft.trim()===nickname)page='profile';else dialog='discard'}
+  if(a==='askSignout')dialog='exit'
+  if(a==='cancelDialog')dialog=''
+  if(a==='confirmDialog'){if(dialog==='exit'){signed=false;page='mine';notice=''}else page='profile';dialog=''}
+  render(true)
+})
+device.addEventListener('submit',e=>{
+  e.preventDefault()
+  if(!signed||page!=='edit')return
+  draft=String(new FormData(e.target).get('name')||'')
+  const value=draft.trim()
+  if(!value||value.length>80){error='请输入 1–80 个字符的昵称';render(true);return}
+  nickname=value;page='profile';notice='昵称已保存';error='';render(true)
+})
+render()
+</script>
+</body>
+</html>

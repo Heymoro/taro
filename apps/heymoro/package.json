@@ -1,0 +1,53 @@
+{
+  "name": "@heymoro/wechat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "templateInfo": {
+    "name": "default",
+    "typescript": false,
+    "css": "sass"
+  },
+  "scripts": {
+    "build": "taro build --type weapp",
+    "build:weapp": "taro build --type weapp",
+    "build:local": "node scripts/build-local.mjs",
+    "dev": "taro build --type weapp --watch",
+    "dev:weapp": "taro build --type weapp --watch",
+    "test": "LOCAL_MVP_HTTP=false COREPACK_ENABLE_NETWORK=0 node --test client.test.cjs migration.test.cjs creation.test.cjs pending-submission.test.cjs tests/unit/*.test.cjs",
+    "lint": "eslint src --ext .js,.jsx",
+    "verify:local": "node scripts/verify-local.mjs"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "",
+  "dependencies": {
+    "@babel/runtime": "^7.7.7",
+    "@tarojs/cli": "workspace:*",
+    "@tarojs/components": "workspace:*",
+    "@tarojs/helper": "workspace:*",
+    "@tarojs/plugin-framework-react": "workspace:*",
+    "@tarojs/plugin-platform-weapp": "workspace:*",
+    "@tarojs/react": "workspace:*",
+    "@tarojs/runtime": "workspace:*",
+    "@tarojs/shared": "workspace:*",
+    "@tarojs/taro": "workspace:*",
+    "@tarojs/webpack5-runner": "workspace:*",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@types/react": "^18",
+    "babel-preset-taro": "workspace:*",
+    "eslint": "^8.12.0",
+    "eslint-config-taro": "workspace:*",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fs-extra": "^9.0.1"
+  }
+}
