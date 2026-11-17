@@ -1,0 +1,28 @@
+.home-page {
+  min-height: 100vh;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.hero-card {
+  padding: 40px 32px;
+  background: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 18px 48px rgba(31, 58, 104, 0.12);
+}
+
+.eyebrow { display: block; color: #6b7ea6; font-size: 22px; letter-spacing: 4px; }
+.hero-title { display: block; margin-top: 22px; color: #1f3568; font-size: 48px; font-weight: 700; line-height: 1.25; }
+.hero-copy { display: block; margin-top: 18px; color: #71809f; font-size: 28px; line-height: 1.6; }
+.welcome-text { display: block; margin-top: 32px; color: #203b73; font-size: 30px; font-weight: 600; }
+.muted-text, .error-text { display: block; margin-top: 28px; color: #71809f; font-size: 26px; }
+.error-text { color: #c94d5d; }
+.stats-row { display: flex; gap: 18px; margin: 28px 0; }
+.stat-card { flex: 1; padding: 24px; background: #f4f7fb; border-radius: 22px; }
+.stat-value, .stat-label { display: block; }
+.stat-value { color: #203b73; font-size: 36px; font-weight: 700; }
+.stat-label { margin-top: 6px; color: #7b8aa6; font-size: 22px; }
+.button-row { display: flex; gap: 16px; }
+.button-row button { flex: 1; }
+.primary-button { margin-top: 32px; background: #203b73; color: #fff; }
+.secondary-button { margin-top: 18px; background: #eef2f8; color: #203b73; }

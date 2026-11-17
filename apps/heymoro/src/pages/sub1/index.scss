@@ -1,0 +1,17 @@
+.records-page { min-height: 100vh; padding: 32px; box-sizing: border-box; }
+.page-title { display: block; color: #203b73; font-size: 42px; font-weight: 700; }
+.editor-card, .record-card { margin-top: 24px; padding: 24px; background: #fff; border-radius: 24px; box-shadow: 0 10px 30px rgba(31, 58, 104, 0.08); }
+.editor-card input, .editor-card textarea { display: block; width: 100%; margin-bottom: 18px; padding: 18px; box-sizing: border-box; background: #f4f7fb; border-radius: 16px; }
+.editor-card textarea { min-height: 150px; }
+.editor-card button { background: #203b73; color: #fff; }
+.record-card { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+.record-title, .record-body, .empty-text, .error-text { display: block; }
+.record-title { color: #203b73; font-size: 30px; font-weight: 600; }
+.record-body { margin-top: 8px; color: #71809f; font-size: 24px; }
+.empty-text, .error-text { margin-top: 28px; color: #71809f; font-size: 26px; }
+.error-text { color: #c94d5d; }
+
+.attachment-row { margin-top: 16px; padding: 16px; background: #f4f7fb; border-radius: 16px; }
+.attachment-name { display: block; color: #203b73; font-size: 26px; overflow-wrap: anywhere; word-break: break-all; }
+.attachment-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.attachment-actions button { margin: 0; }
